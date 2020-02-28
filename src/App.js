@@ -8,7 +8,7 @@ import { FiBookmark } from 'react-icons/fi';
 import _ from 'lodash';
 
 import usePandaBridge from './usePandaBridge';
-import userPepperChat from './usePepperChat';
+import usePepperChat from './usePepperChat';
 
 function App() {
   const { properties, markers } = usePandaBridge({
@@ -17,7 +17,7 @@ function App() {
     // },
     // markers: {},
   });
-  const { bookmarks } = userPepperChat(properties || {}, markers || {});
+  const { bookmarks } = usePepperChat(properties || {}, markers || {});
 
   if (!properties || !markers) {
     return (

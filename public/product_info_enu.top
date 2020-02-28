@@ -1,0 +1,18 @@
+topic: ~product-info ()
+
+proposal: %start Hello! I'm Pepper, I can help you find the perfect bluetooth speaker! ^enableThenGoto(budget)
+
+proposal: %budget First, what's your budget, it can be around 20, 50 or 100 euros!
+u1:(["{around} 20  {euros}" "the cheapest"]) sure! $budget=20 ^enableThenGoto(quality)
+u1:(["{around} 50  {euros}" "the middle"]) sure! $budget=50 ^enableThenGoto(quality)
+u1:(["{around} 100 {euros}" "the best you find"]) sure! $budget=100 ^enableThenGoto(quality)
+
+proposal: %quality do you prefer a better sound quality or a louder speaker? 
+u1:([loud louder loudest]) ok! $quality=loud ^enableThenGoto(waterproof)
+u1:(["{better best} sound {quality}"]) ok! $quality=sound ^enableThenGoto(waterproof)
+
+proposal: %waterproof do you need it to be waterproof?
+u1:([yes "of course"]) ok $waterproof=yes ^enableThenGoto(recommend)
+u1:([no]) ok $waterproof=no ^enableThenGoto(recommend)
+
+proposal: %recommend so I think the best for you would be the U E Boom 3! it is has an awesome and Powerful sound with a Rugged design! plus, it is waterproof. %finished

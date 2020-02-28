@@ -1,0 +1,54 @@
+{
+  "name": "react-pepper",
+  "version": "0.1.0",
+  "homepage": "./",
+  "origin": "https://github.com/pandasuite/react-pepper-component/",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "bootstrap": "^4.4.1",
+    "lodash": "^4.17.15",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-dom": "^16.12.0",
+    "react-icons": "^3.9.0",
+    "react-scripts": "3.3.1",
+    "release-it": "^12.6.2"
+  },
+  "scripts": {
+    "start": "HTTPS=true react-scripts start",
+    "build": "react-scripts build && cd build && zip -r -X '../react-pepper-component.zip' *",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "release": "npm run build && release-it --no-npm.publish"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-react-hooks": "^2.3.0"
+  },
+  "release-it": {
+    "github": {
+      "release": true,
+      "assets": [
+        "react-pepper-component.zip"
+      ]
+    }
+  }
+}

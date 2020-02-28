@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import _ from 'lodash';
+import PandaBridge from 'pandasuite-bridge';
 
 function usePepperChat(properties) {
   const [bookmarks, setBookmarks] = useState([]);
@@ -17,12 +18,12 @@ function usePepperChat(properties) {
 
   useEffect(() => {
     if (!_.isEmpty(properties) && properties.qichatFileName) {
-      const directory = window.PandaBridge.resolvePath('qichat.zip') || '';
+      const directory = PandaBridge.resolvePath('qichat.zip') || '';
       extractMarkersFromChatFile(`${directory}${properties.qichatFileName}`);
     }
 
-    window.PandaBridge.unlisten('__ps_getSnapshotData');
-    window.PandaBridge.getSnapshotData(() => {
+    PandaBridge.unlisten('__ps_getSnapshotData');
+    PandaBridge.getSnapshotData(() => {
       if (bookmarks) {
         return bookmarks.map((bookmark) => ({ id: bookmark }));
       }

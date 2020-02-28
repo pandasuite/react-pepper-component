@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import _ from 'lodash';
+import PandaBridge from 'pandasuite-bridge';
 
 function usePandaBridge(values) {
   const [bridge, setBridge] = useState(values);
 
   useEffect(() => {
-    window.PandaBridge.init(() => {
-      window.PandaBridge.onLoad((pandaData) => {
+    PandaBridge.init(() => {
+      PandaBridge.onLoad((pandaData) => {
         const newBridge = {
           properties: pandaData.properties,
           markers: pandaData.markers,

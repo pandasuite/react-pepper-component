@@ -6,6 +6,7 @@ import {
 import { IoIosChatbubbles } from 'react-icons/io';
 import { FiBookmark } from 'react-icons/fi';
 import _ from 'lodash';
+import PandaBridge from 'pandasuite-bridge';
 
 import usePandaBridge from './usePandaBridge';
 import usePepperChat from './usePepperChat';
@@ -39,7 +40,7 @@ function App() {
   } else {
     _.each(bookmarks, (bookmark) => {
       bookmarkItems.push(
-        <ListGroup.Item action onClick={() => { window.PandaBridge.send('triggerMarker', bookmark); }}>
+        <ListGroup.Item action onClick={() => { PandaBridge.send('triggerMarker', bookmark); }}>
           <FiBookmark className="m-1" />
           {bookmark.substring(1)}
         </ListGroup.Item>,
@@ -56,8 +57,8 @@ function App() {
       </Row>
       <Row>
         <Col>
-          <Button className="m-1" variant="outline-secondary" onClick={() => { window.PandaBridge.send('humanIsEngaged'); }}>Human is engaged</Button>
-          <Button className="m-1" variant="outline-secondary" onClick={() => { window.PandaBridge.send('qiChatStarted'); }}>Qi Chat Started</Button>
+          <Button className="m-1" variant="outline-secondary" onClick={() => { PandaBridge.send('humanIsEngaged'); }}>Human is engaged</Button>
+          <Button className="m-1" variant="outline-secondary" onClick={() => { PandaBridge.send('qiChatStarted'); }}>Qi Chat Started</Button>
         </Col>
       </Row>
       <Row className="p-3">

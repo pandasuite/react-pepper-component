@@ -1,19 +1,17 @@
 {
     "version": "2.0.0",
     "main": "",
+
+    "system": {
+      "localization": true
+    },
   
     "properties": [
       {
         "id": "qichatFileName",
-        "name": "QiChat File Name",
+        "name": "File Name",
         "type": "String",
         "value": "product_info_enu.top"
-      },
-      {
-        "id": "locale",
-        "name": "QiChat Locale",
-        "type": "String",
-        "value": "en_US"
       }
     ],
   
@@ -38,18 +36,6 @@
             "name": "Text",
             "type": "String",
             "value": "Hello Guezmer"
-          }
-        ]
-      },
-      {
-        "id": "setLocale",
-        "name": "Set Locale",
-        "params": [
-          {
-            "id": "locale",
-            "name": "Locale",
-            "type": "String",
-            "value": "FR"
           }
         ]
       },
@@ -96,8 +82,8 @@
     "resources": [
       {
         "id": "qichat.zip",
-        "name": "QiChat",
-        "type": "Zip"
+        "type": "Zip",
+        "localization": true
       }
     ]  
 }

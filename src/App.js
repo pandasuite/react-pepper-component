@@ -8,7 +8,7 @@ import { FiBookmark } from 'react-icons/fi';
 import _ from 'lodash';
 import PandaBridge from 'pandasuite-bridge';
 
-import usePandaBridge from './usePandaBridge';
+import { usePandaBridge } from 'pandasuite-bridge-react';
 import usePepperChat from './usePepperChat';
 
 function App() {

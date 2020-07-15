@@ -10,6 +10,9 @@
       {
         "id": "qichatFileName",
         "name": "File Name",
+        "locale_name": {
+          "fr_FR": "Nom du fichier"
+        },  
         "type": "String",
         "value": "product_info_enu.top"
       }
@@ -18,11 +21,17 @@
     "events": [
       {
         "id": "humanIsEngaged",
-        "name": "Human is engaged"
+        "name": "Human is engaged",
+        "locale_name": {
+          "fr_FR": "Humain engagé"
+        }
       },
       {
         "id": "qiChatStarted",
-        "name": "Qi Chat Started"
+        "name": "Qi Chat Started",
+        "locale_name": {
+          "fr_FR": "Qi Chat commencé"
+        }
       }
     ],
   
@@ -30,44 +39,69 @@
       {
         "id": "say",
         "name": "Say",
+        "locale_name": {
+          "fr_FR": "Parle"
+        },
         "params": [
           {
             "id": "text",
             "name": "Text",
+            "locale_name": {
+              "fr_FR": "Texte"
+            },
             "type": "String",
-            "value": "Hello Guezmer"
+            "value": "Hello!"
           }
         ]
       },
       {
         "id": "setVariable",
         "name": "Set Variable",
+        "locale_name": {
+          "fr_FR": "Définir la variable"
+        },
         "params": [
           {
             "id": "name",
             "name": "Variable Name",
+            "locale_name": {
+              "fr_FR": "Nom de la variable"
+            },
             "type": "String",
             "value": ""
           },
           {
             "id": "value",
             "name": "Variable Value",
+            "locale_name": {
+              "fr_FR": "Valeur de la variable"
+            },
             "type": "String",
-            "value": ""
+            "value": "",
+            "bindable": true
           }
         ]
       },
       {
         "id": "startQiChat",
-        "name": "Start QiChat"
+        "name": "Start QiChat",
+        "locale_name": {
+          "fr_FR": "Démarrer le QiChat"
+        }
       },
       {
         "id": "stopQiChat",
-        "name": "Stop QiChat"
+        "name": "Stop QiChat",
+        "locale_name": {
+          "fr_FR": "Arrêter le QiChat"
+        }
       },
       {
         "id": "startQiAnim",
         "name": "Start QiAnim",
+        "locale_name": {
+          "fr_FR": "Démarrer le QiChat"
+        },
         "params": [
           {
             "id": "text",

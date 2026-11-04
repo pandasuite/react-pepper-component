@@ -21,10 +21,10 @@
   },
   "scripts": {
     "start": "HTTPS=true react-scripts start",
-    "build": "react-scripts build && cd build && zip -r -X '../react-pepper-component.zip' *",
+    "build": "rm -f ./react-pepper-component.zip ./react-pepper-component-v*.zip && react-scripts build && cd build && zip -r -X \"../react-pepper-component-v$npm_package_version.zip\" *",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "release": "npm run build && release-it --no-npm.publish"
+    "release": "release-it --no-npm.publish"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,10 +46,13 @@
     "eslint-plugin-react-hooks": "^2.3.0"
   },
   "release-it": {
+    "hooks": {
+      "after:bump": "npm run build"
+    },
     "github": {
       "release": true,
       "assets": [
-        "react-pepper-component.zip"
+        "react-pepper-component-v*.zip"
       ]
     }
   }
